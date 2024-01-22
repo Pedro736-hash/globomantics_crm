@@ -22,16 +22,16 @@ class Database:
 
         # Open the specified database file for reading and perform loading
         with open(path, "r") as handle:
-            # import json
-            # self.data = json.load(handle)
+            import json
+            self.data = json.load(handle)
 
             # ALTERNATIVE IMPLEMENTATIONS: Using YAML or XML to load data
             # import yaml
             # self.data = yaml.safe_load(handle)
 
-            import xmltodict
-            self.data = xmltodict.parse(handle.read())["root"]
-            print(self.data)
+            # import xmltodict
+            # self.data = xmltodict.parse(handle.read())["root"]
+            # print(self.data)
 
 
     def balance(self, acct_id):
@@ -48,10 +48,10 @@ class Database:
             bal = float(acct["due"]) - float(acct["paid"])
 
             # Style added in module 4
-            return f"{bal:.2f} USD"
+            # return f" {bal:.2f} USD"
 
             # Style added in module 3
-            # return f"$ {bal:.2f}"
+            return f"$ {bal:.2f}"
 
             # Original style in module 2
             # return int(acct["due"]) - int(acct["paid"])
